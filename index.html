@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Vishal Pandey | Computer Science Student</title>
+
+  <meta
+    name="description"
+    content="Vishal Pandey is a Computer Science student interested in technology, creativity, design, development, SEO, and ideas."
+  />
+
+  <meta
+    name="keywords"
+    content="Vishal Pandey, Computer Science Student, BCA, web development, design, SEO, digital marketing, Nepal"
+  />
+
+  <meta name="author" content="Vishal Pandey" />
+
+  <meta
+    property="og:title"
+    content="Vishal Pandey | Computer Science Student"
+  />
+
+  <meta
+    property="og:description"
+    content="Computer Science student interested in technology, creativity, design, development, SEO, and ideas."
+  />
+
+  <meta property="og:type" content="website" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+    }
+
+    .aurora {
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(99, 102, 241, 0.18),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 80% 30%,
+          rgba(168, 85, 247, 0.16),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 50% 80%,
+          rgba(59, 130, 246, 0.12),
+          transparent 35%
+        );
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #a78bfa, #60a5fa, #34d399);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .project-card,
+    .skill-card,
+    .experience-card,
+    .belief-card {
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+    }
+
+    .project-card:hover,
+    .skill-card:hover,
+    .experience-card:hover,
+    .belief-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(167, 139, 250, 0.35);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .social-link {
+      transition:
+        transform 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+    }
+
+    .github:hover {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .instagram:hover {
+      color: #f472b6;
+      border-color: rgba(244, 114, 182, 0.35);
+    }
+
+    .youtube:hover {
+      color: #ef4444;
+      border-color: rgba(239, 68, 68, 0.35);
+    }
+
+    .substack:hover {
+      color: #fb923c;
+      border-color: rgba(251, 146, 60, 0.35);
+    }
+
+    .nav-link {
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: white;
+    }
+
+    /* CTA button animation */
+    .cta-button {
+      position: relative;
+      overflow: hidden;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .cta-button::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        transparent 20%,
+        rgba(255, 255, 255, 0.16),
+        transparent 80%
+      );
+      transform: translateX(-120%);
+      transition: transform 0.55s ease;
+    }
+
+    .cta-button:hover::after {
+      transform: translateX(120%);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    .cta-button:active {
+      transform: translateY(0) scale(0.96);
+    }
+
+    .cta-primary:hover {
+      box-shadow:
+        0 10px 35px rgba(139, 92, 246, 0.25),
+        0 0 25px rgba(139, 92, 246, 0.12);
+      background-color: #f3f3f3;
+    }
+
+    .cta-secondary:hover {
+      border-color: rgba(167, 139, 250, 0.5);
+      background: rgba(139, 92, 246, 0.1);
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.12);
+    }
+
+    /* Profile photo */
+    .profile-frame {
+      position: relative;
+    }
+
+    .profile-frame::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: 2rem;
+      background: linear-gradient(
+        135deg,
+        rgba(167, 139, 250, 0.5),
+        rgba(96, 165, 250, 0.2),
+        rgba(52, 211, 153, 0.35)
+      );
+      z-index: -1;
+      filter: blur(1px);
+    }
+
+    /* Flowing creative code background */
+    .code-stream {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.12;
+    }
+
+    .code-line {
+      position: absolute;
+      white-space: nowrap;
+      font-family: "Courier New", monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.55);
+      animation: codeFlow linear infinite;
+    }
+
+    .code-line:nth-child(1) {
+      top: 15%;
+      left: -25%;
+      animation-duration: 32s;
+    }
+
+    .code-line:nth-child(2) {
+      top: 32%;
+      left: -35%;
+      animation-duration: 38s;
+      animation-delay: -10s;
+    }
+
+    .code-line:nth-child(3) {
+      top: 52%;
+      left: -30%;
+      animation-duration: 35s;
+      animation-delay: -18s;
+    }
+
+    .code-line:nth-child(4) {
+      top: 70%;
+      left: -40%;
+      animation-duration: 42s;
+      animation-delay: -6s;
+    }
+
+    .code-line:nth-child(5) {
+      top: 88%;
+      left: -30%;
+      animation-duration: 36s;
+      animation-delay: -20s;
+    }
+
+    @keyframes codeFlow {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(150vw);
+      }
+    }
+
+    /* Respect reduced-motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .code-line {
+        animation: none;
+      }
+
+      .project-card,
+      .skill-card,
+      .experience-card,
+      .belief-card,
+      .social-link,
+      .cta-button {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[#08080c] text-white antialiased">
+
+  <!-- Flowing creative code -->
+  <div class="code-stream" aria-hidden="true">
+    <div class="code-line">
+      &lt;curiosity&gt; build · learn · wonder · &lt;/curiosity&gt;
+    </div>
+
+    <div class="code-line">
+      const imagination = infinite; // keep exploring
+    </div>
+
+    <div class="code-line">
+      { ideas } → { experiments } → { things worth making }
+    </div>
+
+    <div class="code-line">
+      function wonder() { return curiosity; }
+    </div>
+
+    <div class="code-line">
+      01 · 10 · 11 · &lt;/&gt; · { } · ∞ · create()
+    </div>
+  </div>
+
+  <!-- Background -->
+  <div class="fixed inset-0 -z-10 aurora"></div>
+
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50">
+    <nav class="max-w-6xl mx-auto px-6 py-5">
+      <div class="glass rounded-2xl px-5 py-4 flex items-center justify-between">
+
+        <a
+          href="#home"
+          class="font-semibold tracking-tight text-white"
+        >
+          Vishal Pandey
+        </a>
+
+        <div class="hidden md:flex items-center gap-7 text-sm text-gray-400">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#beliefs" class="nav-link">Beliefs</a>
+          <a href="#writing" class="nav-link">Writing</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <button
+          id="menuButton"
+          class="md:hidden text-gray-300 text-xl"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          type="button"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="hidden glass rounded-2xl mt-2 px-5 py-4 md:hidden"
+      >
+        <div class="flex flex-col gap-4 text-sm text-gray-400">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#beliefs" class="nav-link">Beliefs</a>
+          <a href="#writing" class="nav-link">Writing</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <main id="home" class="relative z-10">
+
+    <section class="min-h-screen flex items-center pt-32 pb-20">
+      <div class="max-w-6xl mx-auto px-6 w-full">
+
+        <div
+          class="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20 items-center"
+        >
+
+          <!-- Hero Text -->
+          <div class="order-2 lg:order-1">
+
+            <p class="text-gray-400 text-base sm:text-lg mb-4">
+              Hello, I'm
+            </p>
+
+            <h1
+              class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight"
+            >
+              Vishal Pandey
+            </h1>
+
+            <p class="mt-4 text-lg sm:text-xl text-gray-300">
+              Computer Science Student
+            </p>
+
+            <h2
+              class="mt-7 text-xl sm:text-2xl md:text-3xl font-medium tracking-tight"
+            >
+              Drunk on wonder.
+            </h2>
+
+            <p
+              class="mt-6 max-w-2xl text-gray-400 leading-8 text-base sm:text-lg"
+            >
+              Interested in technology, creativity, design, ideas, and the
+              strange things that make being human interesting.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+
+              <a
+                href="#projects"
+                class="cta-button cta-primary relative px-6 py-3 rounded-xl bg-white text-black font-medium"
+              >
+                <span class="relative z-10">
+                  Explore my work
+                </span>
+              </a>
+
+              <a
+                href="#contact"
+                class="cta-button cta-secondary relative px-6 py-3 rounded-xl border border-white/10 text-gray-300 font-medium"
+              >
+                <span class="relative z-10">
+                  Let's connect
+                </span>
+              </a>
+
+            </div>
+          </div>
+
+          <!-- Profile Photo -->
+          <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+
+            <div
+              class="profile-frame glass rounded-[2rem] p-2 w-64 sm:w-72 md:w-80"
+            >
+              <div
+                class="aspect-[4/5] rounded-[1.6rem] overflow-hidden bg-white/5"
+              >
+                <img
+                  src="images/Profile.webp"
+                  alt="Vishal Pandey"
+                  class="w-full h-full object-cover"
+                  width="320"
+                  height="400"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-24">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <div
+          class="grid lg:grid-cols-[1.4fr_0.8fr] gap-12 items-start"
+        >
+
+          <div>
+
+            <p
+              class="text-sm uppercase tracking-[0.25em] text-purple-400 mb-4"
+            >
+              About
+            </p>
+
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8">
+              A little about me
+            </h2>
+
+            <div class="space-y-6 text-gray-400 leading-8">
+
+              <p>
+                I'm currently pursuing a Bachelor of Computer Applications
+                (BCA). I'm interested in the intersection of technology,
+                creativity, and ideas.
+              </p>
+
+              <p>
+                My interests currently span development, design, and learning
+                how digital products are built. I'm still learning,
+                experimenting, and figuring things out — which is part of the
+                fun.
+              </p>
+
+              <p>
+                Besides tech, I love art, beauty, writing, cinema, and basically
+                the things that make us human.
+              </p>
+
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="glass rounded-3xl p-7">
+
+            <p class="text-sm text-purple-400 mb-5">
+              Education
+            </p>
+
+            <h3 class="text-xl font-semibold">
+              Madan Bhandari Memorial College
+            </h3>
+
+            <p class="text-gray-400 mt-2">
+              Bachelor of Computer Applications (BCA)
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-24">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <div class="mb-12">
+
+          <p
+            class="text-sm uppercase tracking-[0.25em] text-purple-400 mb-4"
+          >
+            Skills
+          </p>
+
+          <h2 class="text-3xl sm:text-4xl font-bold">
+            Things I'm learning and exploring
+          </h2>
+
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+          <!-- Design -->
+          <div class="skill-card glass rounded-3xl p-7">
+
+            <div
+              class="w-11 h-11 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6"
+            >
+              <i class="fa-solid fa-pen-ruler text-purple-400"></i>
+            </div>
+
+            <h3 class="text-xl font-semibold mb-3">
+              Design
+            </h3>
+
+            <p class="text-gray-400 leading-7 text-sm">
+              Art and beauty make me more human, and design fascinates me—
+              making what I see and imagine tangible.
+            </p>
+
+          </div>
+
+          <!-- SEO -->
+          <div class="skill-card glass rounded-3xl p-7">
+
+            <div
+              class="w-11 h-11 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6"
+            >
+              <i class="fa-solid fa-magnifying-glass text-blue-400"></i>
+            </div>
+
+            <h3 class="text-xl font-semibold mb-3">
+              SEO
+            </h3>
+
+            <p class="text-gray-400 leading-7 text-sm">
+              Learning how search engines understand websites and how useful
+              content can reach the right people.
+            </p>
+
+          </div>
+
+          <!-- Digital Marketing -->
+          <div class="skill-card glass rounded-3xl p-7">
+
+            <div
+              class="w-11 h-11 rounded-xl bg-pink-500/10 flex items-center justify-center mb-6"
+            >
+              <i class="fa-solid fa-bullhorn text-pink-400"></i>
+            </div>
+
+            <h3 class="text-xl font-semibold mb-3">
+              Digital Marketing
+            </h3>
+
+            <p class="text-gray-400 leading-7 text-sm">
+              Exploring content, audience, communication, and how ideas travel
+              through digital platforms.
+            </p>
+
+          </div>
+
+          <!-- Web Technologies -->
+          <div class="skill-card glass rounded-3xl p-7">
+
+            <div
+              class="w-11 h-11 rounded-xl bg-green-500/10 flex items-center justify-center mb-6"
+            >
+              <i class="fa-solid fa-code text-green-400"></i>
+            </div>
+
+            <h3 class="text-xl font-semibold mb-3">
+              Web Technologies
+            </h3>
+
+            <p class="text-gray-400 leading-7 text-sm">
+              Building and experimenting with websites using HTML, CSS, and
+              the technologies I'm currently learning.
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-24">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <div class="mb-12">
+
+          <p
+            class="text-sm uppercase tracking-[0.25em] text-purple-400 mb-4"
+          >
+            Projects
+          </p>
+
+          <h2 class="text-3xl sm:text-4xl font-bold">
+            Things I've worked on
+          </h2>
+
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-7">
+
+          <!-- FoodForGood -->
+          <article class="project-card glass rounded-3xl overflow-hidden">
+
+            <div class="aspect-video overflow-hidden">
+
+              <img
+                src="images/Hackfest.webp"
+                alt="Vishal Pandey and teammates at MBMC HACKFEST 2026"
+                class="w-full h-full object-cover transition duration-500 hover:scale-105"
+                width="1280"
+                height="720"
+                loading="lazy"
+                decoding="async"
+              />
+
+            </div>
+
+            <div class="p-7">
+
+              <p class="text-sm text-purple-400 mb-2">
+                Give Food a Second Chance
+              </p>
+
+              <h3 class="text-2xl font-semibold mb-4">
+                FoodForGood
+              </h3>
+
+              <p class="text-gray-400 leading-7">
+                A concept developed during MBMC HACKFEST 2026 around reducing
+                food waste by connecting surplus food from restaurants and
+                hotels with people who can use it.
+              </p>
+
+            </div>
+
+          </article>
+
+          <!-- YouTube -->
+          <article class="project-card glass rounded-3xl p-7 flex flex-col">
+
+            <div
+              class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-7"
+            >
+              <i class="fa-brands fa-youtube text-red-400 text-xl"></i>
+            </div>
+
+            <p class="text-sm text-red-400 mb-2">
+              Ideas in Audio
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-4">
+              Curated Ideas
+            </h3>
+
+            <p class="text-gray-400 leading-7">
+              A growing collection of ideas, essays, and conversations worth
+              revisiting, including curated Naval Ravikant content and audio
+              versions of selected Paul Graham essays.
+            </p>
+
+            <div class="flex gap-8 mt-7 mb-8">
+
+              <div>
+                <p class="text-2xl font-bold">
+                  500+
+                </p>
+
+                <p class="text-sm text-gray-500 mt-1">
+                  subscribers
+                </p>
+              </div>
+
+              <div>
+                <p class="text-2xl font-bold">
+                  5K+
+                </p>
+
+                <p class="text-sm text-gray-500 mt-1">
+                  watch hours
+                </p>
+              </div>
+
+            </div>
+
+            <a
+              href="https://youtube.com/@thevishpandey"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-auto text-sm font-medium text-gray-300 hover:text-white transition"
+            >
+              Watch on YouTube →
+            </a>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Learning -->
+    <section id="experience" class="py-24">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <div class="mb-12">
+
+          <p
+            class="text-sm uppercase tracking-[0.25em] text-purple-400 mb-4"
+          >
+            Experience & Learning
+          </p>
+
+          <h2 class="text-3xl sm:text-4xl font-bold">
+            Things I've been part of
+          </h2>
+
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5">
+
+          <!-- HackFest -->
+          <div class="experience-card glass rounded-3xl p-7">
+
+            <p class="text-sm text-purple-400 mb-4">
+              2026
+            </p>
+
+            <h3 class="text-xl font-semibold mb-3">
+              MBMC HACKFEST 2026
+            </h3>
+
+            <p class="text-gray-400 leading-7 text-sm">
+              Participated in MBMC HACKFEST 2026 and worked on FoodForGood,
+              a project exploring ways to reduce food waste.
+            </p>
+
+          </div>
+
+          <!-- SEO -->
+          <div class="experience-card glass rounded-3xl p-7">
+
+            <p class="text-sm text-blue-400 mb-4">
+              Workshop
+            </p>
+
+            <h3 class="text-xl font-semibold mb-3">
+              SEO Workshop
+            </h3>
+
+            <p class="text-gray-400 leading-7 text-sm">
+              Learned practical fundamentals of search engine optimization
+              and website optimization.
+            </p>
+
+          </div>
+
+          <!-- Git -->
+          <div class="experience-card glass rounded-3xl p-7">
+
+            <p class="text-sm text-green-400 mb-4">
+              Workshop
+            </p>
+
+            <h3 class="text-xl font-semibold mb-3">
+              Git Workshop
+            </h3>
+
+            <p class="text-gray-400 leading-7 text-sm">
+              Explored Git and the fundamentals of version control and
+              collaborative development.
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Beliefs -->
+    <section id="beliefs" class="py-24">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <div class="mb-12">
+
+          <p
+            class="text-sm uppercase tracking-[0.25em] text-purple-400 mb-4"
+          >
+            A few thoughts
+          </p>
+
+          <h2 class="text-3xl sm:text-4xl font-bold">
+            Some Things I Believe
+          </h2>
+
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+          <div class="belief-card glass rounded-2xl p-6">
+            <p class="text-gray-300">
+              Believe in spontaneous curiosity.
+            </p>
+          </div>
+
+          <div class="belief-card glass rounded-2xl p-6">
+            <p class="text-gray-300">
+              When you're inspired to do something, do it.
+            </p>
+          </div>
+
+          <div class="belief-card glass rounded-2xl p-6">
+            <p class="text-gray-300">
+              All great things happen spontaneously, as side projects or
+              hobbies, without the aim of making something big.
+            </p>
+          </div>
+
+          <div class="belief-card glass rounded-2xl p-6">
+            <p class="text-gray-300">
+              Agency &gt; courage &gt; intelligence.
+            </p>
+          </div>
+
+          <div class="belief-card glass rounded-2xl p-6">
+            <p class="text-gray-300">
+              Don’t fix your identity. Every human contains multitudes.
+            </p>
+          </div>
+
+          <div class="belief-card glass rounded-2xl p-6">
+            <p class="text-gray-300">
+              All learning is about how to think.
+            </p>
+          </div>
+
+          <div class="belief-card glass rounded-2xl p-6">
+            <p class="text-gray-300">
+              Learn to handle the risk of embarrassment, rejection, and
+              failure — and be shameless.
+            </p>
+          </div>
+
+          <div class="belief-card glass rounded-2xl p-6">
+            <p class="text-gray-300">
+              Don’t be practical, be delusional.
+            </p>
+          </div>
+
+          <div class="belief-card glass rounded-2xl p-6">
+            <p class="text-gray-300">
+              The best way to prove your value is to build something.
+            </p>
+          </div>
+
+          <div class="belief-card glass rounded-2xl p-6">
+            <p class="text-gray-300">
+              Maximize your serendipity.
+            </p>
+          </div>
+
+          <div class="belief-card glass rounded-2xl p-6">
+            <p class="text-gray-300">
+              Write for yourself. Write to remember.
+            </p>
+          </div>
+
+          <div class="belief-card glass rounded-2xl p-6">
+            <p class="text-gray-300">
+              Reject most advice.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Books -->
+        <div class="mt-20">
+
+          <h3 class="text-2xl font-semibold mb-7">
+            Books I Like
+          </h3>
+
+          <div class="flex flex-wrap gap-3">
+
+            <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">
+              The Almanack of Naval Ravikant
+            </span>
+
+            <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">
+              Zero to One
+            </span>
+
+            <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">
+              Meditations
+            </span>
+
+            <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">
+              Essays of Schopenhauer
+            </span>
+
+            <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">
+              The Beginning of Infinity
+            </span>
+
+            <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">
+              How to Fail at Almost Everything and Still Win Big
+            </span>
+
+            <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">
+              Siddhartha
+            </span>
+
+            <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">
+              Stories of Your Life and Others
+            </span>
+
+            <span class="px-4 py-2 rounded-full glass text-sm text-gray-300">
+              Antifragile
+            </span>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Writing -->
+    <section id="writing" class="py-24">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <div
+          class="grid lg:grid-cols-[1fr_1.2fr] gap-10 items-center"
+        >
+
+          <div>
+
+            <p
+              class="text-sm uppercase tracking-[0.25em] text-purple-400 mb-4"
+            >
+              Writing
+            </p>
+
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+              Antifragile Notes
+            </h2>
+
+            <p class="text-gray-400 leading-8">
+              Outside technology, I write about curiosity, ambition,
+              creativity, people, art, and the strange things that make
+              being human interesting.
+            </p>
+
+          </div>
+
+          <div class="glass rounded-3xl p-8">
+
+            <p class="text-xl sm:text-2xl leading-9 text-gray-300">
+              Essays, thoughts, questions, and fragments from a curious mind
+              trying to make sense of the world.
+            </p>
+
+            <a
+              href="https://vishpandey.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block mt-7 text-sm font-medium text-gray-300 hover:text-white transition"
+            >
+              Read my writing →
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <div class="max-w-3xl">
+
+          <p
+            class="text-sm uppercase tracking-[0.25em] text-purple-400 mb-4"
+          >
+            Contact
+          </p>
+
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            Let’s Connect
+          </h2>
+
+          <p class="text-gray-400 leading-8">
+            Whether you want to talk about technology, design, ideas,
+            projects, or something completely unexpected, like cinema and
+            what makes you human—just say hello.
+          </p>
+
+        </div>
+
+        <!-- Social Links -->
+        <div class="mt-10 flex flex-wrap gap-4">
+
+          <a
+            href="https://github.com/thevishpandey"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link github glass rounded-xl px-5 py-3 flex items-center gap-3 text-gray-400"
+            aria-label="GitHub"
+          >
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+          </a>
+
+          <a
+            href="https://instagram.com/thevishpandey"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link instagram glass rounded-xl px-5 py-3 flex items-center gap-3 text-gray-400"
+            aria-label="Instagram"
+          >
+            <i class="fa-brands fa-instagram"></i>
+            <span>Instagram</span>
+          </a>
+
+          <a
+            href="https://youtube.com/@thevishpandey"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link youtube glass rounded-xl px-5 py-3 flex items-center gap-3 text-gray-400"
+            aria-label="YouTube"
+          >
+            <i class="fa-brands fa-youtube"></i>
+            <span>YouTube</span>
+          </a>
+
+          <a
+            href="https://vishpandey.substack.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link substack glass rounded-xl px-5 py-3 flex items-center gap-3 text-gray-400"
+            aria-label="Substack"
+          >
+            <i class="fa-solid fa-pen-nib"></i>
+            <span>Substack</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-8">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div
+        class="flex flex-col sm:flex-row items-center justify-between gap-4"
+      >
+
+        <p class="text-sm text-gray-500">
+          © 2026 Vishal Pandey.
+        </p>
+
+        <p class="text-sm text-gray-500">
+          Built with curiosity by Vish.
+        </p>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu -->
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = !mobileMenu.classList.contains("hidden");
+
+      mobileMenu.classList.toggle("hidden");
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Open navigation menu" : "Close navigation menu"
+      );
+    });
+
+    document.querySelectorAll("#mobileMenu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute(
+          "aria-label",
+          "Open navigation menu"
+        );
+      });
+    });
+  </script>
+
+</body>
+</html>
