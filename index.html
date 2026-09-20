@@ -904,6 +904,49 @@ section + section {
   transform: translateY(-3px);
 }
 
+.support-work {
+  margin-top: 52px;
+  max-width: 520px;
+}
+
+.support-title {
+  margin: 0 0 10px;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.support-text {
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.support-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  text-decoration: none;
+  transition:
+    color 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.support-link span {
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.support-link:hover {
+  color: var(--accent-2);
+  transform: translateX(3px);
+}
+
+.support-link:hover span {
+  transform: translateX(4px);
+}
+
 /* =========================
    FOOTER
 ========================= */
@@ -1910,6 +1953,24 @@ footer {
       Email
     </a>
 
+  </div>
+
+  <div class="support-work">
+    <p class="support-title">Support my work</p>
+
+    <p class="support-text">
+      If you wanna support whatever I do, consider buying me a momo.
+      It helps me fuel my soul and stomach.
+    </p>
+
+    <a
+      href="https://buymemomo.com/vishpandey"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="support-link"
+    >
+      🥟 Buy me a momo <span>→</span>
+    </a>
   </div>
 
 </section>
